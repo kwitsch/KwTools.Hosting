@@ -1,0 +1,2 @@
+# KwTools.Hosting
+Hosting simplifications
