@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KwTools.Hosting</name>
+    </assembly>
+    <members>
+        <member name="T:KwTools.Hosting.HostFactory">
+            <summary>
+            Factory for configured Host object production
+            </summary>
+        </member>
+        <member name="P:KwTools.Hosting.HostFactory.Instance">
+            <summary>
+            ConfigFactory Instanz
+            </summary>
+        </member>
+        <member name="M:KwTools.Hosting.HostFactory.RunHostAsync">
+            <summary>
+            Run a configured Host instance 
+            </summary>
+            <returns>async Task</returns>
+        </member>
+        <member name="M:KwTools.Hosting.HostFactory.GetHostAsync">
+            <summary>
+            Get a configured Host instance 
+            </summary>
+            <returns>async Task</returns>
+        </member>
+        <member name="M:KwTools.Hosting.HostFactory.GetHostBuilderAsync">
+            <summary>
+            Get a configured HostBuilder instance 
+            </summary>
+            <returns>async Task</returns>
+        </member>
+        <member name="T:KwTools.Hosting.Interfaces.IAddServices">
+            <summary>
+            Interface for class based ServiceCollection configuration
+            </summary>
+        </member>
+        <member name="M:KwTools.Hosting.Interfaces.IAddServices.AddServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add services to HostBuilder ServiceCollection
+            </summary>
+            <param name="hostBuilderCollection">HostBuilder ServiceCollection during configuration</param>
+            <returns>Task</returns>
+        </member>
+        <member name="T:KwTools.Hosting.Interfaces.IConfigureBuilder">
+            <summary>
+            Interface for class based HostBuilder configuration
+            </summary>
+        </member>
+        <member name="M:KwTools.Hosting.Interfaces.IConfigureBuilder.ConfigureBuilder(Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Configure the HostBuilder
+            </summary>
+            <param name="hostBuilder">HostBuilder</param>
+            <returns>Task</returns>
+        </member>
+        <member name="T:KwTools.Hosting.Interfaces.IConfigureHost">
+            <summary>
+            Interface for class based Host configuration
+            </summary>
+        </member>
+        <member name="M:KwTools.Hosting.Interfaces.IConfigureHost.ConfigureHost(Microsoft.Extensions.Hosting.IHost)">
+            <summary>
+            Configure the Host
+            </summary>
+            <param name="host">Host</param>
+            <returns>Task</returns>
+        </member>
+        <member name="T:KwTools.Hosting.Interfaces.InterfaceExtensions">
+            <summary>
+            ExtensionMethodes for IAddServices, IConfigureBuilder and IConfigureHost
+            </summary>
+        </member>
+        <member name="M:KwTools.Hosting.Interfaces.InterfaceExtensions.AddAllAsync(System.Collections.Generic.IEnumerable{KwTools.Hosting.Interfaces.IAddServices},Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Enumerates an IAddServices collection and executes AddServices for all
+            </summary>
+            <param name="self">IAddServices collection</param>
+            <param name="serviceCollection">HostBuilder ServiceCollection</param>
+            <returns>async Task</returns>
+        </member>
+        <member name="M:KwTools.Hosting.Interfaces.InterfaceExtensions.ConfAllAsync(System.Collections.Generic.IEnumerable{KwTools.Hosting.Interfaces.IConfigureBuilder},Microsoft.Extensions.Hosting.IHostBuilder)">
+            <summary>
+            Enumerates an IConfigureBuilder collection and executes ConfigureBuilder for all
+            </summary>
+            <param name="self">IConfigureBuilder collection</param>
+            <param name="hostBuilder">HostBuilder</param>
+            <returns>async Task</returns>
+        </member>
+        <member name="M:KwTools.Hosting.Interfaces.InterfaceExtensions.ConfAllAsync(System.Collections.Generic.IEnumerable{KwTools.Hosting.Interfaces.IConfigureHost},Microsoft.Extensions.Hosting.IHost)">
+            <summary>
+            Enumerates an IConfigureHost collection and executes ConfigureHost for all
+            </summary>
+            <param name="self">IConfigureHost collection</param>
+            <param name="host">Host</param>
+            <returns>async Task</returns>
+        </member>
+    </members>
+</doc>
